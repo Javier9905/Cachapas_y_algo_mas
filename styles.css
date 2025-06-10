@@ -1,0 +1,201 @@
+:root{
+  --green:#2e8600;
+  --yellow:#ffd100;
+  --whiteish:#f9f9f9;
+  --dark:#222;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Poppins',sans-serif;
+  background: radial-gradient(at top left, var(--yellow), var(--green));
+  color:var(--dark);
+}
+.container{width:90%;max-width:1200px;margin:0 auto;}
+.flex{display:flex;justify-content:space-between;align-items:center;}
+.info-bar{background:#000;color:#fff;font-size:.9rem;padding:.25rem 0;}
+.info-flex{display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+.icon{margin-right:.25rem;}
+header{background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);position:sticky;top:0;z-index:100;padding:.5rem 0;}
+.header-logo{height:80px;margin-right:1rem;}
+.center-nav a{color:#fff;margin-left:1rem;text-decoration:none;position:relative;}
+.center-nav a::after{content:'';display:block;width:0;height:2px;background:var(--yellow);transition:width .3s;margin-top:2px;}
+.center-nav a:hover::after{width:100%;}
+#hero{position:relative;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;text-align:center;}
+.hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:url('images/cachapa.png')center/cover no-repeat;opacity:.25;filter:brightness(.4);}
+.hero-logo.big-logo{width:50vw;max-width:500px;}
+@media(max-width:600px){.hero-logo.big-logo{width:80vw;}}
+.hero-buttons{display:flex;gap:1rem;margin-top:1rem;}
+.btn-yellow{background:var(--yellow);color:var(--dark);padding:.75rem 1.5rem;border-radius:30px;text-decoration:none;font-weight:600;}
+.btn-red{background:#e40000;color:#fff;padding:.75rem 1.5rem;border-radius:30px;border:none;cursor:pointer;font-weight:600;}
+.btn-yellow:hover,.btn-red:hover{opacity:.85;}
+
+/* Categorías */
+.grid-cat{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1.5rem;padding:2rem 0;}
+.cat-tile{background:#fff;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1);text-align:center;text-decoration:none;color:var(--dark);transition:transform .2s;padding:1rem;}
+.cat-tile:hover{transform:translateY(-4px);}
+.cat-tile img{width:100%;height:80px;object-fit:cover;border-radius:4px;}
+.cat-tile span{display:block;margin-top:.5rem;font-weight:600;}
+
+/* Menú Digital */
+.menu-digital{padding:3rem 0;background:var(--green);color:#fff;}
+.menu-digital-inner{display:flex;flex-wrap:wrap;gap:2rem;}
+.menu-image{flex:1 1 300px;text-align:center;}
+.menu-image img{max-width:100%;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.2);}
+.menu-content{flex:2 1 400px;}
+.title-yellow{display:inline-block;background:var(--yellow);color:var(--dark);padding:.25rem .5rem;font-size:1.75rem;margin-bottom:1rem;}
+.menu-category{margin-bottom:1.5rem;}
+.menu-category h3{font-size:1.25rem;margin-bottom:.5rem;}
+.menu-list{list-style:none;padding:0;}
+.menu-list li{display:flex;justify-content:space-between;padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,0.2);cursor:pointer;}
+.menu-list li:last-child{border-bottom:none;}
+.menu-list li span:first-child{flex:1;}
+@media(max-width:768px){.menu-digital-inner{flex-direction:column;}}
+
+/* Carrito */
+.cart-toggle{position:fixed;bottom:1rem;right:1rem;background:var(--green);color:#fff;border:none;padding:.75rem 1rem;border-radius:4px;cursor:pointer;z-index:1001;}
+.cart{position:fixed;top:50%;right:-300px;transform:translateY(-50%);width:280px;max-height:80vh;background:#fff;box-shadow:-2px 2px 10px rgba(0,0,0,0.2);padding:1rem;transition:right .3s;overflow-y:auto;z-index:1000;}
+.cart.open{right:0;}
+.cart h2{margin-top:0;font-size:1.25rem;color:var(--green);}
+.cart-items{list-style:none;padding:0;margin:.5rem 0;}
+.cart-items li{padding:.25rem 0;border-bottom:1px solid #ccc;}
+.cart-actions{display:flex;gap:.5rem;}
+.cart .btn{flex:1;padding:.5rem;border:none;background:var(--yellow);color:var(--dark);cursor:pointer;border-radius:4px;}
+.cart .btn-primary{background:var(--green);color:#fff;}
+
+/* Sticky info bar */
+.info-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1002;
+}
+
+/* Ensure header stays below info-bar */
+header {
+  position: fixed;
+  top: 30px; /* height of info-bar */
+  width: 100%;
+  z-index: 1001;
+}
+
+/* Add padding to body so content isn't hidden */
+body {
+  padding-top: 100px; /* space for info-bar + header */
+}
+
+/* Smooth scrolling for anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Override sticky */
+.info-bar { position: static !important; }
+header { position: static !important; top: auto !important; }
+body { padding-top: 0 !important; }
+/* Contact Section */
+.contact-section {
+  padding: 3rem 0;
+  background: var(--whiteish);
+}
+.contact-section h2 {
+  margin-bottom: 1rem;
+  color: var(--green);
+}
+.contact-section a {
+  color: var(--green);
+  text-decoration: none;
+}
+.contact-section .btn-primary {
+  background: var(--green);
+  color: #fff;
+  padding: .75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+/* Footer Section */
+.site-footer {
+  background: #111;
+  color: #ccc;
+  padding: 3rem 0 1rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.footer-logo img {
+  width: 140px;
+  margin-bottom: .5rem;
+}
+.site-footer p.copy {
+  text-align: center;
+  font-size: .9rem;
+  margin-top: 1rem;
+}
+
+/* Highlight animation */
+.highlight {
+  animation: highlightAnim 2s ease-out;
+}
+@keyframes highlightAnim {
+  0% { background-color: rgba(255, 255, 0, 0.5); }
+  100% { background-color: transparent; }
+}
+
+/* Highlight category title background */
+.menu-section h2 {
+  background: var(--yellow);
+  color: var(--dark);
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Highlight animation */
+.highlight {
+  animation: highlightAnim 2s ease-out;
+}
+@keyframes highlightAnim {
+  0% { background-color: rgba(255, 255, 0, 0.5); }
+  100% { background-color: transparent; }
+}
+
+/* Better contrast for info-bar */
+.info-bar {
+  background: var(--yellow);
+  color:#fff;
+}
+.info-bar .icon {
+  color: var(--dark);
+}
+.info-item {
+  display: inline-block;
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+}
+.info-item:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Adjust nav bar below info-bar */
+header {
+  background: rgba(0,0,0,0.6);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Ensure nav links are visible */
+.center-nav a {
+  color: #fff;
+}
+
+/* Add pointer cursor to nav links */
+.center-nav a {
+  cursor: pointer;
+}
